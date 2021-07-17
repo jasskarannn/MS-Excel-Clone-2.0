@@ -1,7 +1,4 @@
-const ps = new PerfectScrollbar("#cells", {
-    wheelSpeed: 15
-});
-
+// loop to add upto 100 cells from A, B, C ... Z, AA, AB, ... CV
 for (let i = 1; i <= 100; i++) {
     let str = "";
     let n = i;
@@ -20,6 +17,9 @@ for (let i = 1; i <= 100; i++) {
     $("#rows").append(`<div class="row-name">${i}</div>`)
 }
 
+const ps = new PerfectScrollbar("#cells", {
+    wheelSpeed: 15
+});
 
 let cellData = {
     "Sheet1": {}
@@ -197,13 +197,14 @@ function addRemoveSelectFromFontStyle(data, property) {
         $(`#${property}`).removeClass("selected");
     }
 }
-
+// cell variables
 let count = 0;
 let startcellSelected = false;
 let startCell = {};
 let endCell = {};
 let scrollXRStarted = false;
 let scrollXLStarted = false;
+
 $(".input-cell").mousemove(function (e) {
     e.preventDefault();
     if (e.buttons == 1) {
